@@ -5,9 +5,9 @@
 struct Student
 {
     char name[50];
-    int birth_year;
-    int birth_month;
-    int birth_day;
+    int year;
+    int month;
+    int day;
 };
 
 int main()
@@ -22,49 +22,35 @@ int main()
         printf("Enter name of student %d: ", i + 1);
         scanf("%s", s[i].name);
         printf("Enter birth year of student %d: ", i + 1);
-        scanf("%d", &s[i].birth_year);
+        scanf("%d", &s[i].year);
         printf("Enter birth month of student %d: ", i + 1);
-        scanf("%d", &s[i].birth_month);
+        scanf("%d", &s[i].month);
         printf("Enter birth day of student %d: ", i + 1);
-        scanf("%d", &s[i].birth_day);
+        scanf("%d", &s[i].day);
     }
 
-    int youngest_index = 0;
-    int oldest_index = 0;
+    int y = 0;
+    int o = 0;
     for (int i = 1; i < n; i++)
     {
-        if (s[i].birth_year > s[oldest_index].birth_year ||
-            (s[i].birth_year == s[oldest_index].birth_year &&
-             s[i].birth_month > s[oldest_index].birth_month) ||
-            (s[i].birth_year == s[oldest_index].birth_year &&
-             s[i].birth_month == s[oldest_index].birth_month &&
-             s[i].birth_day > s[oldest_index].birth_day))
+        if (s[i].year > s[o].year ||(s[i].year == s[o].year &&s[i].month > s[o].month) ||(s[i].year == s[o].year &&s[i].month == s[o].month &&s[i].day > s[o].day))
         {
-            oldest_index = i;
+            o = i;
         }
 
-        if (s[i].birth_year < s[youngest_index].birth_year ||
-            (s[i].birth_year == s[youngest_index].birth_year &&
-             s[i].birth_month < s[youngest_index].birth_month) ||
-            (s[i].birth_year == s[youngest_index].birth_year &&
-             s[i].birth_month == s[youngest_index].birth_month &&
-             s[i].birth_day < s[youngest_index].birth_day))
+        if (s[i].year < s[y].year ||(s[i].year == s[y].year &&s[i].month < s[y].month) ||(s[i].year == s[y].year &&s[i].month == s[y].month &&s[i].day < s[y].day))
         {
-            youngest_index = i;
+            y = i;
         }
     }
 
     printf("\nYoungest student:\n");
-    printf("Name: %s\n", s[youngest_index].name);
-    printf("Birth Date: %d/%d/%d\n", s[youngest_index].birth_year,
-           s[youngest_index].birth_month,
-           s[youngest_index].birth_day);
+    printf("Name: %s\n", s[y].name);
+    printf("Birth Date: %d/%d/%d\n", s[y].year, s[y].month, s[y].day);
 
     printf("\nOldest student:\n");
-    printf("Name: %s\n", s[oldest_index].name);
-    printf("Birth Date: %d/%d/%d\n", s[oldest_index].birth_year,
-           s[oldest_index].birth_month,
-           s[oldest_index].birth_day);
+    printf("Name: %s\n", s[o].name);
+    printf("Birth Date: %d/%d/%d\n", s[o].year, s[o].month, s[o].day);
 
     return 0;
 }
