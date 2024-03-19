@@ -12,11 +12,14 @@ struct Student
 
 int main()
 {
+    // Student count
     int n;
     printf("Enter the number of students: ");
     scanf("%d", &n);
+
     struct Student s[n];
 
+    // Input
     for (int i = 0; i < n; i++)
     {
         printf("Enter name of student %d: ", i + 1);
@@ -33,17 +36,20 @@ int main()
     int o = 0;
     for (int i = 1; i < n; i++)
     {
+        // Find old
         if (s[i].year > s[o].year ||(s[i].year == s[o].year &&s[i].month > s[o].month) ||(s[i].year == s[o].year &&s[i].month == s[o].month &&s[i].day > s[o].day))
         {
             o = i;
         }
 
+        // Find Young
         if (s[i].year < s[y].year ||(s[i].year == s[y].year &&s[i].month < s[y].month) ||(s[i].year == s[y].year &&s[i].month == s[y].month &&s[i].day < s[y].day))
         {
             y = i;
         }
     }
 
+    // Print
     printf("\nYoungest student:\n");
     printf("Name: %s\n", s[y].name);
     printf("Birth Date: %d/%d/%d\n", s[y].year, s[y].month, s[y].day);
