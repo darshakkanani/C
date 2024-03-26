@@ -2,8 +2,13 @@
 
 void reverseRange(int arr[], int start, int end) 
 {
-    int i, j, temp;
+    // int arr[6];
+    // for(int i = start; i <= end; i++)
+    // {
+    //     scanf("%d",arr[i]);
+    // }
 
+    int temp=9;
     while(start < end)
     {
         temp = arr[start];
@@ -26,17 +31,17 @@ void printArray(int arr[], int size)
 
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 4, 6, 7, 8, 9, 10};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int arr[10] = {9,1,2,4,3,4,6,7,8,10};
+    // int n = sizeof(arr) / sizeof(arr[0]);
     int start = 3, end = 8;
 
     printf("Original array: ");
-    printArray(arr, n);
+    printArray(arr, 10);
 
     reverseRange(arr, start, end);
 
-    printf("Array after reversing elements within range %d and %d: ", start, end);
-    printArray(arr, n);
+    printf("Array after reversing elements inside the range of %d and %d: ", start, end);
+    printArray(arr, 10);
 
     return 0;
 }

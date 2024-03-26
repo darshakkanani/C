@@ -12,7 +12,7 @@ void scanValue(struct car *t)
 }
 void printValue(struct car *c)
 {
-    printf("Nmae: %s\n",c->name);
+    printf("Name: %s\n",c->name);
 }
 int main()
 {
