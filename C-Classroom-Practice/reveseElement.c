@@ -1,47 +1,34 @@
 #include <stdio.h>
 
-void reverseRange(int arr[], int start, int end) 
-{
-    // int arr[6];
-    // for(int i = start; i <= end; i++)
-    // {
-    //     scanf("%d",arr[i]);
-    // }
+void reverseRange(int arr[], int start, int end) {
+    int i, j, temp;
 
-    int temp=9;
-    while(start < end)
-    {
-        temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-
-        start++;
-        end--;
+    for (i = start, j = end; i < j; i++, j--) {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
 
-void printArray(int arr[], int size) 
-{
-    for (int i = 0; i < size; i++) 
-    {
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");
 }
 
-int main()
-{
-    int arr[10] = {9,1,2,4,3,4,6,7,8,10};
-    // int n = sizeof(arr) / sizeof(arr[0]);
+int main() {
+    int arr[] = {1, 2, 3, 4, 4, 6, 7, 8, 9, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
     int start = 3, end = 8;
 
     printf("Original array: ");
-    printArray(arr, 10);
+    printArray(arr, n);
 
     reverseRange(arr, start, end);
 
-    printf("Array after reversing elements inside the range of %d and %d: ", start, end);
-    printArray(arr, 10);
+    printf("Array after reversing elements within range %d and %d: ", start, end);
+    printArray(arr, n);
 
     return 0;
 }
