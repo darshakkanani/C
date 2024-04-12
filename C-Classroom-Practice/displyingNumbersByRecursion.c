@@ -1,19 +1,19 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int display(int a)
 {
-    if(a==0)
+    if (a == 0)
     {
         return 1;
     }
-    printf("%d ",a);
-    return display(a-1);  
+    printf("%d ", a);
+    return display(a - 1);
 }
 int main()
 {
     int a;
     printf("Enter the number: ");
-    scanf("%d",&a);
+    scanf("%d", &a);
 
     display(a);
 }

@@ -54,11 +54,11 @@ int main()
 {
     int size;
     printf("Enter the size of an Array: ");
-    scanf("%d",&size);
+    scanf("%d", &size);
 
     int arr[100];
     printf("Enter the elements of an Array: ");
-    scanArray(arr,size);
+    scanArray(arr, size);
 
     SelectionSort(arr, size, 0);
 

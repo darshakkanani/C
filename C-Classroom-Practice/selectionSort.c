@@ -21,8 +21,7 @@ void selectionSort(int arr[], int size)
             }
         }
         swap(&arr[min_idx], &arr[i]);
-        
-    }
+        }
 }
 
 void printArray(int arr[], int size)

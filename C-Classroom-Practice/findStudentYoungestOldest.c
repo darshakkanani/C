@@ -37,13 +37,13 @@ int main()
     for (int i = 1; i < n; i++)
     {
         // Find old
-        if (s[i].year > s[o].year ||(s[i].year == s[o].year &&s[i].month > s[o].month) ||(s[i].year == s[o].year &&s[i].month == s[o].month &&s[i].day > s[o].day))
+        if (s[i].year > s[o].year || (s[i].year == s[o].year && s[i].month > s[o].month) || (s[i].year == s[o].year && s[i].month == s[o].month && s[i].day > s[o].day))
         {
             o = i;
         }
 
         // Find Young
-        if (s[i].year < s[y].year ||(s[i].year == s[y].year &&s[i].month < s[y].month) ||(s[i].year == s[y].year &&s[i].month == s[y].month &&s[i].day < s[y].day))
+        if (s[i].year < s[y].year || (s[i].year == s[y].year && s[i].month < s[y].month) || (s[i].year == s[y].year && s[i].month == s[y].month && s[i].day < s[y].day))
         {
             y = i;
         }
