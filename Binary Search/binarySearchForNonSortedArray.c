@@ -1,34 +1,47 @@
 #include <stdio.h>
-
-void swap(int *x, int *y) {
+// Not Working 
+void swap(int *x, int *y)
+{
     int temp = *x;
     *x = *y;
     *y = temp;
 }
 
-void bubbleSort(int arr[], int size) {
-    int i, j;
-    for (i = 0; i < size - 1; i++) {
-        for (j = 0; j < size - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swap(&arr[j], &arr[j + 1]);
+void bubbleSort(int arr[], int size)
+{
+    int i, j, min_idx;
+    for (i = 0; i < size - 1; i++)
+    {
+        min_idx = i;
+        for (j = i + 1; j < size; j++)
+        {
+            if (arr[j] < arr[min_idx])
+            {
+                swap(&arr[min_idx], &arr[j]);
             }
         }
     }
 }
 
-int binarySearch(int arr[], int size, int key) {
+int binarySearch(int arr[], int size, int key)
+{
     int start = 0;
     int end = size - 1;
 
-    while (start <= end) {
+    while (start <= end)
+    {
         int mid = start + (end - start) / 2;
 
-        if (arr[mid] == key) {
+        if (arr[mid] == key)
+        {
             return mid;
-        } else if (arr[mid] < key) {
+        }
+        else if (arr[mid] < key)
+        {
             start = mid + 1;
-        } else {
+        }
+        else
+        {
             end = mid - 1;
         }
     }
@@ -36,14 +49,17 @@ int binarySearch(int arr[], int size, int key) {
     return -1; // key not found
 }
 
-void scan(int arr[], int size) {
+void scan(int arr[], int size)
+{
     printf("Enter the elements of the array: ");
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
+    {
         scanf("%d", &arr[i]);
     }
 }
 
-int main() {
+int main()
+{
     int size;
     printf("Enter the size of the array: ");
     scanf("%d", &size);
@@ -59,9 +75,12 @@ int main() {
     bubbleSort(arr, size);
     int index = binarySearch(arr, size, key);
 
-    if (index != -1) {
+    if (index != -1)
+    {
         printf("Key found at index: %d\n", index);
-    } else {
+    }
+    else
+    {
         printf("Key not found in the array.\n");
     }
 
