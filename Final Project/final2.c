@@ -3,11 +3,14 @@
 #include <unistd.h>
 #include <time.h>
 
-void printRandoms(int lower, int upper, int count)
+void printRandoms(int data[],int size)
 {
-    for (int i = 0; i < count; i++)
+    int lower = 1;
+    int upper = 50000;
+
+    for (int i = lower; i < upper; i++)
     {
-        int num = (rand() % (upper - lower + 1)) + lower;
+        data[i] = (rand() % (upper - lower + 1)) + lower;
     }
 }
 
@@ -153,6 +156,16 @@ void quickSort(int arr[], int low, int high)
     }
 }
 
+void print(int arr[], int size)
+{
+    printf("------------------After sorting----------------\n");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
 int main()
 {
     srand(time(NULL)); // Seed the random number generator
@@ -162,39 +175,42 @@ int main()
     int arr3[50000];
     int arr4[50000];
     int arr5[50000];
-    int size1 = 50000;
-    int size2 = 50000;
+    int size = 50000;
 
     // Generate random numbers for sorting
-    printRandoms(0, 50000, size1);
-    printRandoms(0, 50000, size2);
+    printRandoms(arr1, size);
+    printRandoms(arr2, size);
+    printRandoms(arr3, size);
+    printRandoms(arr4, size);
+    printRandoms(arr5, size);
+    
 
     clock_t start1 = clock();
-    selectionSort(arr1, size1);
+    selectionSort(arr1, size);
     clock_t end1 = clock();
     double time_taken1 = (double)(end1 - start1) / CLOCKS_PER_SEC;
     printf("Selection Sort: %lf seconds\n", time_taken1);
 
     clock_t start2 = clock();
-    bubbleSort(arr2, size2);
+    bubbleSort(arr2, size);
     clock_t end2 = clock();
     double time_taken2 = (double)(end2 - start2) / CLOCKS_PER_SEC;
     printf("Bubble Sort: %lf seconds\n", time_taken2);
 
     clock_t start3 = clock();
-    insertionSort(arr3, size2);
+    insertionSort(arr3, size);
     clock_t end3 = clock();
     double time_taken3 = (double)(end3 - start3) / CLOCKS_PER_SEC;
     printf("Insertion Sort: %lf seconds\n", time_taken3);
 
     clock_t start4 = clock();
-    mergeSort(arr4, 0, size2 - 1);
+    mergeSort(arr4, 0, size - 1);
     clock_t end4 = clock();
     double time_taken4 = (double)(end4 - start4) / CLOCKS_PER_SEC;
     printf("Merge Sort: %lf seconds\n", time_taken4);
 
     clock_t start5 = clock();
-    quickSort(arr5, 0, size2 - 1);
+    quickSort(arr5, 0, size - 1);
     clock_t end5 = clock();
     double time_taken5 = (double)(end5 - start5) / CLOCKS_PER_SEC;
     printf("Quick Sort: %lf seconds\n", time_taken5);
