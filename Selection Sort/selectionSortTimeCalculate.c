@@ -10,11 +10,13 @@ void swap(int *x, int *y)
     *y = temp;
 }
 
-void printRandoms(int lower, int upper, int count)
+void printRandoms(int data[],int size)
 {
-    for (int i = 0; i < count; i++)
+    int lower = 1;
+    int upper = size;
+    for (int i = 0; i < size; i++)
     {
-        int num = (rand() % (upper - lower + 1)) + lower;
+        data[i] = (rand() % (upper - lower + 1)) + lower;
     }
 }
 
@@ -42,7 +44,7 @@ int main()
 {
     int arr[50000];
     int size = 50000;
-    printRandoms(0, 50000, size);
+    printRandoms(arr,size);
 
     clock_t start = clock();
     selectionSort(arr, size);

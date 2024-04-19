@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void swap(int* x, int* y)
+void swap(int *x, int *y)
 {
     int temp;
     temp = *x;
@@ -14,8 +14,10 @@ int partition(int arr[], int low, int high)
 
     int i = (low - 1);
 
-    for (int j = low; j <= high; j++) {
-        if (arr[j] < pivot) {
+    for (int j = low; j <= high; j++)
+    {
+        if (arr[j] < pivot)
+        {
             i++;
             swap(&arr[i], &arr[j]);
         }
@@ -26,7 +28,8 @@ int partition(int arr[], int low, int high)
 
 void quickSort(int arr[], int low, int high)
 {
-    if (low < high) {
+    if (low < high)
+    {
         int pi = partition(arr, low, high);
 
         quickSort(arr, low, pi - 1);
@@ -62,6 +65,6 @@ int main()
     int arr[100];
 
     scan(arr, size);
-    mergeSort(arr, 0,size-1);
+    quickSort(arr, 0, size - 1);
     print(arr, size);
 }
