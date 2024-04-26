@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int merge(int arr[], int s, int e)
+void merge(int arr[], int s, int e)
 {
     int i, j, k;
     int m = (s + e) / 2;
@@ -8,7 +8,7 @@ int merge(int arr[], int s, int e)
     int len2 = e - m;
 
     int first[len1];
-    int second[len2+1];
+    int second[len2 + 1];
 
     for (i = 0; i < len1; i++)
     {

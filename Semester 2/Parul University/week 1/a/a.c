@@ -8,7 +8,6 @@ int* resizeArray(int* array, int size, int newSize) {
         exit(1);
     }
 
-    // If the new size is larger than the old size, initialize new elements to 0
     if (newSize > size) {
         for (int i = size; i < newSize; i++) {
             newArray[i] = 0;
