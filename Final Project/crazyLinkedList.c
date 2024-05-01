@@ -147,16 +147,18 @@ void deleteAfterGivenValue(struct node **g, int value)
     free(temp);
 }
 
-void linearSearch(struct node *l, int value)
+void linearSearch(struct node *l, int value) 
 {
-    if (l->data == value)
+    while (l != NULL) 
     {
-        printf("Found\n");
+        if (l->data == value) 
+        {
+            printf("Found\n");
+            return;
+        }
+        l = l->next;
     }
-    else
-    {
-        printf("Not found\n");
-    }
+    printf("Not found\n");
 }
 
 void selectionSort(struct node *s)
