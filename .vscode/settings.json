@@ -9,7 +9,10 @@
         "span": "c",
         "regex": "c",
         "utility": "c",
-        "valarray": "c"
+        "valarray": "c",
+        "conio.h": "c",
+        "stdlib.h": "c",
+        "6.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

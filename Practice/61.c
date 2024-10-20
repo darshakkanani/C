@@ -26,7 +26,7 @@ struct node *head = NULL;
 int main()
 {
     int choice;
-    do
+    while (1)
     {
         printf("\n*****\n");
 
@@ -40,7 +40,7 @@ int main()
         printf("8. Delete Node at position\n");
         printf("9. Search for a node\n");
         printf("10. Reverse the linked list\n");
-        printf("11. ** To exit **\n");
+        printf("0. ** To exit **\n");
 
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
@@ -76,13 +76,13 @@ int main()
         case 10:
             reverse();
             break;
-        case 11:
-            break;
+        case 0:
+            exit(0);
         default:
             printf("\nWrong Choice");
             break;
         }
-    }while(choice < 11);
+    }
 }
 
 // Function to create a new node
@@ -305,8 +305,7 @@ void search()
 // Function to reverse the linked list
 void reverse()
 {
-    struct node *prev = NULL, *current = head,
-                *next = NULL;
+    struct node *prev = NULL, *current = head,*next = NULL;
     while (current != NULL)
     {
         next = current->next;
