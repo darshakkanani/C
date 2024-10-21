@@ -295,7 +295,6 @@ void search()
             printf("Node with value %d found at position %d\n", value, pos);
             return;
         }
-
         pos++;
         ptr = ptr->next;
     }
